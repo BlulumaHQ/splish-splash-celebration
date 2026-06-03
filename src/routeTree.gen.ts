@@ -13,6 +13,7 @@ import { Route as SponsorsRouteImport } from './routes/sponsors'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FoodMarketRouteImport } from './routes/food-market'
+import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
 import { Route as BecomeAVendorRouteImport } from './routes/become-a-vendor'
 import { Route as BecomeASponsorRouteImport } from './routes/become-a-sponsor'
@@ -37,6 +38,11 @@ const GalleryRoute = GalleryRouteImport.update({
 const FoodMarketRoute = FoodMarketRouteImport.update({
   id: '/food-market',
   path: '/food-market',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ExperiencesRoute = ExperiencesRouteImport.update({
@@ -71,6 +77,7 @@ export interface FileRoutesByFullPath {
   '/become-a-sponsor': typeof BecomeASponsorRoute
   '/become-a-vendor': typeof BecomeAVendorRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
   '/food-market': typeof FoodMarketRoute
   '/gallery': typeof GalleryRoute
   '/schedule': typeof ScheduleRoute
@@ -82,6 +89,7 @@ export interface FileRoutesByTo {
   '/become-a-sponsor': typeof BecomeASponsorRoute
   '/become-a-vendor': typeof BecomeAVendorRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
   '/food-market': typeof FoodMarketRoute
   '/gallery': typeof GalleryRoute
   '/schedule': typeof ScheduleRoute
@@ -94,6 +102,7 @@ export interface FileRoutesById {
   '/become-a-sponsor': typeof BecomeASponsorRoute
   '/become-a-vendor': typeof BecomeAVendorRoute
   '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
   '/food-market': typeof FoodMarketRoute
   '/gallery': typeof GalleryRoute
   '/schedule': typeof ScheduleRoute
@@ -107,6 +116,7 @@ export interface FileRouteTypes {
     | '/become-a-sponsor'
     | '/become-a-vendor'
     | '/experiences'
+    | '/faq'
     | '/food-market'
     | '/gallery'
     | '/schedule'
@@ -118,6 +128,7 @@ export interface FileRouteTypes {
     | '/become-a-sponsor'
     | '/become-a-vendor'
     | '/experiences'
+    | '/faq'
     | '/food-market'
     | '/gallery'
     | '/schedule'
@@ -129,6 +140,7 @@ export interface FileRouteTypes {
     | '/become-a-sponsor'
     | '/become-a-vendor'
     | '/experiences'
+    | '/faq'
     | '/food-market'
     | '/gallery'
     | '/schedule'
@@ -141,6 +153,7 @@ export interface RootRouteChildren {
   BecomeASponsorRoute: typeof BecomeASponsorRoute
   BecomeAVendorRoute: typeof BecomeAVendorRoute
   ExperiencesRoute: typeof ExperiencesRoute
+  FaqRoute: typeof FaqRoute
   FoodMarketRoute: typeof FoodMarketRoute
   GalleryRoute: typeof GalleryRoute
   ScheduleRoute: typeof ScheduleRoute
@@ -175,6 +188,13 @@ declare module '@tanstack/react-router' {
       path: '/food-market'
       fullPath: '/food-market'
       preLoaderRoute: typeof FoodMarketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/experiences': {
@@ -221,6 +241,7 @@ const rootRouteChildren: RootRouteChildren = {
   BecomeASponsorRoute: BecomeASponsorRoute,
   BecomeAVendorRoute: BecomeAVendorRoute,
   ExperiencesRoute: ExperiencesRoute,
+  FaqRoute: FaqRoute,
   FoodMarketRoute: FoodMarketRoute,
   GalleryRoute: GalleryRoute,
   ScheduleRoute: ScheduleRoute,
