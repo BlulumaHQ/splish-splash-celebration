@@ -87,6 +87,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "theme-color", content: "#0E3B43" },
+      { property: "og:title", content: "Chinese Cultural Heritage Festival 2026 · Vancouver Water Splashing Festival" },
+      { name: "twitter:title", content: "Chinese Cultural Heritage Festival 2026 · Vancouver Water Splashing Festival" },
+      { property: "og:description", content: "July 26, 2026 · Swangard Stadium, Burnaby BC. A city-level multicultural celebration of culture, community, food and the signature water splashing carnival." },
+      { name: "twitter:description", content: "July 26, 2026 · Swangard Stadium, Burnaby BC. A city-level multicultural celebration of culture, community, food and the signature water splashing carnival." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b8386b8-d16a-4121-9b97-8275917d4bba/id-preview-81164a09--af9a8c07-a337-42fd-9d58-ba9d4a428ade.lovable.app-1780450321874.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/4b8386b8-d16a-4121-9b97-8275917d4bba/id-preview-81164a09--af9a8c07-a337-42fd-9d58-ba9d4a428ade.lovable.app-1780450321874.png" },
     ],
     links: [
       {
