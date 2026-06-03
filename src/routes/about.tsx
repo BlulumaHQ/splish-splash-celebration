@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageHero } from "@/components/site/PageHero";
 import { Reveal } from "@/components/site/Reveal";
-import { SectionHeader } from "./index";
 import { FESTIVAL } from "@/lib/festival";
 import { ArrowRight } from "lucide-react";
 import openingImg from "@/assets/stadium-opening.png";
@@ -62,7 +61,12 @@ function AboutPage() {
 
       <section className="bg-brand-cream py-24">
         <div className="mx-auto max-w-7xl px-5 lg:px-8">
-          <SectionHeader eyebrow="Leadership" title="The voices behind the festival." />
+          <Reveal>
+            <div className="text-[11px] uppercase tracking-[0.24em] text-brand-coral">Leadership</div>
+            <h2 className="mt-3 font-display text-3xl lg:text-5xl font-semibold text-brand-ocean-deep max-w-3xl text-balance">
+              The voices behind the festival.
+            </h2>
+          </Reveal>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
             {[
               { name: "Hua Niu", role: "President, CCSA", quote: "We invite you to support and participate in this 2026 celebration of culture and community." },

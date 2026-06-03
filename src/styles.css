@@ -63,35 +63,47 @@
 
 :root {
   --radius: 0.5rem;
-  /* Brand palette — CCSA Festival 2026
-     Primary Red #C8102E, Gold #D9A441, Dark Teal #0E3B43, White #FFFFFF */
-  --brand-red: oklch(0.555 0.205 25);
-  --brand-red-deep: oklch(0.45 0.18 25);
-  --brand-gold: oklch(0.76 0.13 78);
-  --brand-gold-soft: oklch(0.88 0.07 80);
-  --brand-teal: oklch(0.34 0.04 210);
-  --brand-teal-deep: oklch(0.24 0.035 210);
-  --brand-cream: oklch(0.985 0.012 85);
+  /* Brand palette — Vancouver Water Splashing Festival 2026
+     Bright, summer, outdoor lifestyle. */
+  --brand-ocean: oklch(0.66 0.16 240);        /* #1F8FE5 */
+  --brand-ocean-deep: oklch(0.45 0.13 245);   /* deep navy ocean for text/footer */
+  --brand-sky: oklch(0.82 0.13 230);          /* #61C8FF */
+  --brand-teal-bright: oklch(0.72 0.13 195);  /* #00B8B0 */
+  --brand-sun: oklch(0.89 0.16 90);           /* #FFD447 */
+  --brand-sun-soft: oklch(0.95 0.09 95);
+  --brand-coral: oklch(0.71 0.18 25);         /* #FF6B5C */
+  --brand-coral-deep: oklch(0.62 0.20 25);
+  --brand-sand: oklch(0.975 0.012 85);        /* #F8F5EF */
+  --brand-ink: oklch(0.22 0.04 245);          /* dark slate for text */
+
+  /* Backwards-compatible aliases so existing classes keep working */
+  --brand-red: var(--brand-coral);
+  --brand-red-deep: var(--brand-coral-deep);
+  --brand-gold: var(--brand-sun);
+  --brand-gold-soft: var(--brand-sun-soft);
+  --brand-teal: var(--brand-ocean);
+  --brand-teal-deep: var(--brand-ocean-deep);
+  --brand-cream: var(--brand-sand);
 
   --background: oklch(1 0 0);
-  --foreground: var(--brand-teal-deep);
+  --foreground: var(--brand-ink);
   --card: oklch(1 0 0);
-  --card-foreground: var(--brand-teal-deep);
+  --card-foreground: var(--brand-ink);
   --popover: oklch(1 0 0);
-  --popover-foreground: var(--brand-teal-deep);
-  --primary: var(--brand-red);
+  --popover-foreground: var(--brand-ink);
+  --primary: var(--brand-coral);
   --primary-foreground: oklch(1 0 0);
-  --secondary: var(--brand-teal);
+  --secondary: var(--brand-ocean);
   --secondary-foreground: oklch(1 0 0);
-  --muted: oklch(0.965 0.008 80);
-  --muted-foreground: oklch(0.45 0.02 220);
-  --accent: var(--brand-gold);
-  --accent-foreground: var(--brand-teal-deep);
+  --muted: oklch(0.97 0.005 230);
+  --muted-foreground: oklch(0.48 0.03 240);
+  --accent: var(--brand-sun);
+  --accent-foreground: var(--brand-ink);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.92 0.01 80);
-  --input: oklch(0.92 0.01 80);
-  --ring: var(--brand-red);
+  --border: oklch(0.92 0.012 230);
+  --input: oklch(0.92 0.012 230);
+  --ring: var(--brand-ocean);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -174,6 +186,16 @@
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --color-brand-ocean: var(--brand-ocean);
+  --color-brand-ocean-deep: var(--brand-ocean-deep);
+  --color-brand-sky: var(--brand-sky);
+  --color-brand-teal-bright: var(--brand-teal-bright);
+  --color-brand-sun: var(--brand-sun);
+  --color-brand-sun-soft: var(--brand-sun-soft);
+  --color-brand-coral: var(--brand-coral);
+  --color-brand-coral-deep: var(--brand-coral-deep);
+  --color-brand-sand: var(--brand-sand);
+  --color-brand-ink: var(--brand-ink);
   --color-brand-red: var(--brand-red);
   --color-brand-red-deep: var(--brand-red-deep);
   --color-brand-gold: var(--brand-gold);
@@ -189,40 +211,59 @@
 
   .gradient-hero {
     background:
-      radial-gradient(ellipse at 20% 10%, color-mix(in oklab, var(--brand-red) 35%, transparent), transparent 55%),
-      radial-gradient(ellipse at 85% 90%, color-mix(in oklab, var(--brand-gold) 30%, transparent), transparent 60%),
-      linear-gradient(180deg, color-mix(in oklab, var(--brand-teal-deep) 70%, black) 0%, var(--brand-teal-deep) 100%);
+      radial-gradient(ellipse at 15% 0%, color-mix(in oklab, var(--brand-sun) 55%, transparent), transparent 55%),
+      radial-gradient(ellipse at 90% 100%, color-mix(in oklab, var(--brand-coral) 35%, transparent), transparent 55%),
+      linear-gradient(180deg, var(--brand-sky) 0%, var(--brand-ocean) 100%);
+  }
+
+  .gradient-sky {
+    background: linear-gradient(180deg, var(--brand-sky) 0%, var(--brand-ocean) 100%);
+  }
+
+  .gradient-sunset {
+    background: linear-gradient(135deg, var(--brand-sun) 0%, var(--brand-coral) 100%);
+  }
+
+  .gradient-coral {
+    background: linear-gradient(135deg, var(--brand-coral) 0%, var(--brand-coral-deep) 100%);
   }
 
   .gradient-gold {
-    background: linear-gradient(135deg, var(--brand-gold) 0%, var(--brand-gold-soft) 100%);
+    background: linear-gradient(135deg, var(--brand-sun) 0%, var(--brand-sun-soft) 100%);
   }
 
   .gradient-red {
-    background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-deep) 100%);
+    background: linear-gradient(135deg, var(--brand-coral) 0%, var(--brand-coral-deep) 100%);
   }
 
   .text-gradient-gold {
-    background: linear-gradient(135deg, var(--brand-gold-soft), var(--brand-gold) 60%, #fff4d6);
+    background: linear-gradient(135deg, #fff8d6, var(--brand-sun) 60%, var(--brand-coral));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .text-gradient-ocean {
+    background: linear-gradient(135deg, var(--brand-ocean), var(--brand-teal-bright));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .shadow-elegant {
-    box-shadow: 0 30px 60px -25px color-mix(in oklab, var(--brand-teal-deep) 50%, transparent);
+    box-shadow: 0 30px 60px -25px color-mix(in oklab, var(--brand-ocean) 35%, transparent);
   }
 
   .shadow-glow {
-    box-shadow: 0 0 60px -10px color-mix(in oklab, var(--brand-red) 50%, transparent);
+    box-shadow: 0 10px 40px -10px color-mix(in oklab, var(--brand-coral) 55%, transparent);
   }
 
   .ring-gold {
-    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-gold) 60%, transparent);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--brand-sun) 60%, transparent);
   }
 
   .ink-divider {
-    background-image: linear-gradient(90deg, transparent, var(--brand-gold), transparent);
+    background-image: linear-gradient(90deg, transparent, var(--brand-sun), transparent);
     height: 1px;
   }
 
