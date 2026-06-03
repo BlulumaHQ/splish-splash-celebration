@@ -13,6 +13,7 @@ import { Route as SponsorsRouteImport } from './routes/sponsors'
 import { Route as ScheduleRouteImport } from './routes/schedule'
 import { Route as FoodMarketRouteImport } from './routes/food-market'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as BecomeAVendorRouteImport } from './routes/become-a-vendor'
 import { Route as BecomeASponsorRouteImport } from './routes/become-a-sponsor'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -37,6 +38,11 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BecomeAVendorRoute = BecomeAVendorRouteImport.update({
+  id: '/become-a-vendor',
+  path: '/become-a-vendor',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BecomeASponsorRoute = BecomeASponsorRouteImport.update({
   id: '/become-a-sponsor',
   path: '/become-a-sponsor',
@@ -57,6 +63,7 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/become-a-sponsor': typeof BecomeASponsorRoute
+  '/become-a-vendor': typeof BecomeAVendorRoute
   '/experiences': typeof ExperiencesRoute
   '/food-market': typeof FoodMarketRoute
   '/schedule': typeof ScheduleRoute
@@ -66,6 +73,7 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/become-a-sponsor': typeof BecomeASponsorRoute
+  '/become-a-vendor': typeof BecomeAVendorRoute
   '/experiences': typeof ExperiencesRoute
   '/food-market': typeof FoodMarketRoute
   '/schedule': typeof ScheduleRoute
@@ -76,6 +84,7 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/become-a-sponsor': typeof BecomeASponsorRoute
+  '/become-a-vendor': typeof BecomeAVendorRoute
   '/experiences': typeof ExperiencesRoute
   '/food-market': typeof FoodMarketRoute
   '/schedule': typeof ScheduleRoute
@@ -87,6 +96,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/become-a-sponsor'
+    | '/become-a-vendor'
     | '/experiences'
     | '/food-market'
     | '/schedule'
@@ -96,6 +106,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/become-a-sponsor'
+    | '/become-a-vendor'
     | '/experiences'
     | '/food-market'
     | '/schedule'
@@ -105,6 +116,7 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/become-a-sponsor'
+    | '/become-a-vendor'
     | '/experiences'
     | '/food-market'
     | '/schedule'
@@ -115,6 +127,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   BecomeASponsorRoute: typeof BecomeASponsorRoute
+  BecomeAVendorRoute: typeof BecomeAVendorRoute
   ExperiencesRoute: typeof ExperiencesRoute
   FoodMarketRoute: typeof FoodMarketRoute
   ScheduleRoute: typeof ScheduleRoute
@@ -151,6 +164,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/become-a-vendor': {
+      id: '/become-a-vendor'
+      path: '/become-a-vendor'
+      fullPath: '/become-a-vendor'
+      preLoaderRoute: typeof BecomeAVendorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/become-a-sponsor': {
       id: '/become-a-sponsor'
       path: '/become-a-sponsor'
@@ -179,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   BecomeASponsorRoute: BecomeASponsorRoute,
+  BecomeAVendorRoute: BecomeAVendorRoute,
   ExperiencesRoute: ExperiencesRoute,
   FoodMarketRoute: FoodMarketRoute,
   ScheduleRoute: ScheduleRoute,
