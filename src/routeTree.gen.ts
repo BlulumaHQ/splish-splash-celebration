@@ -9,8 +9,74 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as SponsorsRouteImport } from './routes/sponsors'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ScheduleRouteImport } from './routes/schedule'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as FoodMarketRouteImport } from './routes/food-market'
+import { Route as FaqRouteImport } from './routes/faq'
+import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BecomeAVendorRouteImport } from './routes/become-a-vendor'
+import { Route as BecomeASponsorRouteImport } from './routes/become-a-sponsor'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const SponsorsRoute = SponsorsRouteImport.update({
+  id: '/sponsors',
+  path: '/sponsors',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
+  id: '/sitemap.xml',
+  path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ScheduleRoute = ScheduleRouteImport.update({
+  id: '/schedule',
+  path: '/schedule',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FoodMarketRoute = FoodMarketRouteImport.update({
+  id: '/food-market',
+  path: '/food-market',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FaqRoute = FaqRouteImport.update({
+  id: '/faq',
+  path: '/faq',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExperiencesRoute = ExperiencesRouteImport.update({
+  id: '/experiences',
+  path: '/experiences',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BecomeAVendorRoute = BecomeAVendorRouteImport.update({
+  id: '/become-a-vendor',
+  path: '/become-a-vendor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BecomeASponsorRoute = BecomeASponsorRouteImport.update({
+  id: '/become-a-sponsor',
+  path: '/become-a-sponsor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +85,186 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/become-a-sponsor': typeof BecomeASponsorRoute
+  '/become-a-vendor': typeof BecomeAVendorRoute
+  '/contact': typeof ContactRoute
+  '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
+  '/food-market': typeof FoodMarketRoute
+  '/gallery': typeof GalleryRoute
+  '/schedule': typeof ScheduleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sponsors': typeof SponsorsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/become-a-sponsor': typeof BecomeASponsorRoute
+  '/become-a-vendor': typeof BecomeAVendorRoute
+  '/contact': typeof ContactRoute
+  '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
+  '/food-market': typeof FoodMarketRoute
+  '/gallery': typeof GalleryRoute
+  '/schedule': typeof ScheduleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sponsors': typeof SponsorsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/become-a-sponsor': typeof BecomeASponsorRoute
+  '/become-a-vendor': typeof BecomeAVendorRoute
+  '/contact': typeof ContactRoute
+  '/experiences': typeof ExperiencesRoute
+  '/faq': typeof FaqRoute
+  '/food-market': typeof FoodMarketRoute
+  '/gallery': typeof GalleryRoute
+  '/schedule': typeof ScheduleRoute
+  '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/sponsors': typeof SponsorsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/become-a-sponsor'
+    | '/become-a-vendor'
+    | '/contact'
+    | '/experiences'
+    | '/faq'
+    | '/food-market'
+    | '/gallery'
+    | '/schedule'
+    | '/sitemap.xml'
+    | '/sponsors'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/become-a-sponsor'
+    | '/become-a-vendor'
+    | '/contact'
+    | '/experiences'
+    | '/faq'
+    | '/food-market'
+    | '/gallery'
+    | '/schedule'
+    | '/sitemap.xml'
+    | '/sponsors'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/become-a-sponsor'
+    | '/become-a-vendor'
+    | '/contact'
+    | '/experiences'
+    | '/faq'
+    | '/food-market'
+    | '/gallery'
+    | '/schedule'
+    | '/sitemap.xml'
+    | '/sponsors'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  BecomeASponsorRoute: typeof BecomeASponsorRoute
+  BecomeAVendorRoute: typeof BecomeAVendorRoute
+  ContactRoute: typeof ContactRoute
+  ExperiencesRoute: typeof ExperiencesRoute
+  FaqRoute: typeof FaqRoute
+  FoodMarketRoute: typeof FoodMarketRoute
+  GalleryRoute: typeof GalleryRoute
+  ScheduleRoute: typeof ScheduleRoute
+  SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  SponsorsRoute: typeof SponsorsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/sponsors': {
+      id: '/sponsors'
+      path: '/sponsors'
+      fullPath: '/sponsors'
+      preLoaderRoute: typeof SponsorsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/sitemap.xml': {
+      id: '/sitemap.xml'
+      path: '/sitemap.xml'
+      fullPath: '/sitemap.xml'
+      preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/schedule': {
+      id: '/schedule'
+      path: '/schedule'
+      fullPath: '/schedule'
+      preLoaderRoute: typeof ScheduleRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/food-market': {
+      id: '/food-market'
+      path: '/food-market'
+      fullPath: '/food-market'
+      preLoaderRoute: typeof FoodMarketRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/faq': {
+      id: '/faq'
+      path: '/faq'
+      fullPath: '/faq'
+      preLoaderRoute: typeof FaqRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/experiences': {
+      id: '/experiences'
+      path: '/experiences'
+      fullPath: '/experiences'
+      preLoaderRoute: typeof ExperiencesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/become-a-vendor': {
+      id: '/become-a-vendor'
+      path: '/become-a-vendor'
+      fullPath: '/become-a-vendor'
+      preLoaderRoute: typeof BecomeAVendorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/become-a-sponsor': {
+      id: '/become-a-sponsor'
+      path: '/become-a-sponsor'
+      fullPath: '/become-a-sponsor'
+      preLoaderRoute: typeof BecomeASponsorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,17 +277,18 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  BecomeASponsorRoute: BecomeASponsorRoute,
+  BecomeAVendorRoute: BecomeAVendorRoute,
+  ContactRoute: ContactRoute,
+  ExperiencesRoute: ExperiencesRoute,
+  FaqRoute: FaqRoute,
+  FoodMarketRoute: FoodMarketRoute,
+  GalleryRoute: GalleryRoute,
+  ScheduleRoute: ScheduleRoute,
+  SitemapDotxmlRoute: SitemapDotxmlRoute,
+  SponsorsRoute: SponsorsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
