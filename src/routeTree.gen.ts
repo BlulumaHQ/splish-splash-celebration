@@ -15,6 +15,7 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as FoodMarketRouteImport } from './routes/food-market'
 import { Route as FaqRouteImport } from './routes/faq'
 import { Route as ExperiencesRouteImport } from './routes/experiences'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BecomeAVendorRouteImport } from './routes/become-a-vendor'
 import { Route as BecomeASponsorRouteImport } from './routes/become-a-sponsor'
 import { Route as AboutRouteImport } from './routes/about'
@@ -50,6 +51,11 @@ const ExperiencesRoute = ExperiencesRouteImport.update({
   path: '/experiences',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BecomeAVendorRoute = BecomeAVendorRouteImport.update({
   id: '/become-a-vendor',
   path: '/become-a-vendor',
@@ -76,6 +82,7 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/become-a-sponsor': typeof BecomeASponsorRoute
   '/become-a-vendor': typeof BecomeAVendorRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/food-market': typeof FoodMarketRoute
@@ -88,6 +95,7 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/become-a-sponsor': typeof BecomeASponsorRoute
   '/become-a-vendor': typeof BecomeAVendorRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/food-market': typeof FoodMarketRoute
@@ -101,6 +109,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/become-a-sponsor': typeof BecomeASponsorRoute
   '/become-a-vendor': typeof BecomeAVendorRoute
+  '/contact': typeof ContactRoute
   '/experiences': typeof ExperiencesRoute
   '/faq': typeof FaqRoute
   '/food-market': typeof FoodMarketRoute
@@ -115,6 +124,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/become-a-sponsor'
     | '/become-a-vendor'
+    | '/contact'
     | '/experiences'
     | '/faq'
     | '/food-market'
@@ -127,6 +137,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/become-a-sponsor'
     | '/become-a-vendor'
+    | '/contact'
     | '/experiences'
     | '/faq'
     | '/food-market'
@@ -139,6 +150,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/become-a-sponsor'
     | '/become-a-vendor'
+    | '/contact'
     | '/experiences'
     | '/faq'
     | '/food-market'
@@ -152,6 +164,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   BecomeASponsorRoute: typeof BecomeASponsorRoute
   BecomeAVendorRoute: typeof BecomeAVendorRoute
+  ContactRoute: typeof ContactRoute
   ExperiencesRoute: typeof ExperiencesRoute
   FaqRoute: typeof FaqRoute
   FoodMarketRoute: typeof FoodMarketRoute
@@ -204,6 +217,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ExperiencesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/become-a-vendor': {
       id: '/become-a-vendor'
       path: '/become-a-vendor'
@@ -240,6 +260,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   BecomeASponsorRoute: BecomeASponsorRoute,
   BecomeAVendorRoute: BecomeAVendorRoute,
+  ContactRoute: ContactRoute,
   ExperiencesRoute: ExperiencesRoute,
   FaqRoute: FaqRoute,
   FoodMarketRoute: FoodMarketRoute,
@@ -250,3 +271,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
