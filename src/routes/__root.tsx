@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:site_name", content: "CCSA Cultural Heritage Festival 2026" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "theme-color", content: "#0E3B43" },
+      { name: "theme-color", content: "#1F8FE5" },
       { property: "og:title", content: "Chinese Cultural Heritage Festival 2026 · Vancouver Water Splashing Festival" },
       { name: "twitter:title", content: "Chinese Cultural Heritage Festival 2026 · Vancouver Water Splashing Festival" },
       { property: "og:description", content: "July 26, 2026 · Swangard Stadium, Burnaby BC. A city-level multicultural celebration of culture, community, food and the signature water splashing carnival." },
