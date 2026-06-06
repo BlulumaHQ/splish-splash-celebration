@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { FESTIVAL, FOOTER_NAV } from "@/lib/festival";
 import { MapPin, Mail, Calendar, Globe } from "lucide-react";
+import logoAsset from "@/assets/vancouver-water-festival-logo.png.asset.json";
 
 export function Footer() {
   const explore = FOOTER_NAV.slice(0, 6);
@@ -9,11 +10,13 @@ export function Footer() {
     <footer className="bg-brand-sand text-brand-ocean-deep">
       <div className="mx-auto max-w-7xl px-5 py-16 lg:px-8 grid gap-12 lg:grid-cols-4">
         <div className="lg:col-span-2 max-w-md">
-          <div className="font-display text-2xl font-semibold leading-tight">
-            Vancouver Water Splashing Festival
-          </div>
-          <div className="text-[11px] uppercase tracking-[0.24em] text-brand-ocean/70 mt-1">
-            Chinese Cultural Heritage Celebration · 2026
+          <div className="inline-flex items-center rounded-2xl bg-white px-4 py-3 shadow-[0_8px_24px_-16px_rgba(15,42,63,0.2)]">
+            <img
+              src={logoAsset.url}
+              alt="Vancouver Water Splashing Festival · Chinese Cultural Heritage 2026"
+              className="h-12 w-auto"
+              loading="lazy"
+            />
           </div>
           <p className="mt-5 text-sm leading-relaxed text-brand-ink/70">
             A city-level multicultural celebration in Greater Vancouver. Eighteen years of

@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV } from "@/lib/festival";
+import logoAsset from "@/assets/vancouver-water-festival-logo.png.asset.json";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -23,21 +24,20 @@ export function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8">
-        <Link
-          to="/"
-          className={`flex flex-col leading-tight transition-colors ${
-            scrolled ? "text-brand-ocean-deep" : "text-white"
-          }`}
-        >
-          <span className="font-display text-base sm:text-lg font-semibold tracking-tight">
-            Vancouver Water Splashing Festival
-          </span>
+        <Link to="/" aria-label="Vancouver Water Splashing Festival home" className="flex items-center">
           <span
-            className={`text-[10px] uppercase tracking-[0.24em] mt-0.5 ${
-              scrolled ? "text-brand-ocean/80" : "text-white/70"
+            className={`inline-flex items-center rounded-full transition-all duration-500 ${
+              scrolled
+                ? "bg-transparent px-0 py-0"
+                : "bg-white/95 backdrop-blur px-3 py-1.5 shadow-[0_4px_20px_-8px_rgba(15,42,63,0.25)]"
             }`}
           >
-            Chinese Cultural Heritage · 2026
+            <img
+              src={logoAsset.url}
+              alt="Vancouver Water Splashing Festival · Chinese Cultural Heritage 2026"
+              className="h-9 sm:h-10 w-auto"
+              loading="eager"
+            />
           </span>
         </Link>
 
