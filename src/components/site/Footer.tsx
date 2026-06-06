@@ -14,7 +14,7 @@ export function Footer() {
             <img
               src={logoAsset.url}
               alt="Vancouver Water Splashing Festival · Chinese Cultural Heritage 2026"
-              className="h-12 w-auto"
+              className="h-16 w-auto"
               loading="lazy"
             />
           </div>
