@@ -169,9 +169,9 @@
   }
 
   h1, h2, h3, h4, .font-display {
-    font-family: "Fraunces", "Cormorant Garamond", ui-serif, Georgia, serif;
-    font-feature-settings: "ss01";
-    letter-spacing: -0.02em;
+    font-family: "Fredoka", "Quicksand", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
   .font-zh {
@@ -185,7 +185,8 @@
 
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-serif: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
   --color-brand-ocean: var(--brand-ocean);
   --color-brand-ocean-deep: var(--brand-ocean-deep);
   --color-brand-sky: var(--brand-sky);
