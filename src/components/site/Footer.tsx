@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { FESTIVAL, FOOTER_NAV } from "@/lib/festival";
 import { MapPin, Mail, Calendar, Globe } from "lucide-react";
-import logoAsset from "@/assets/vancouver-water-festival-logo.png.asset.json";
 
 export function Footer() {
   const explore = FOOTER_NAV.slice(0, 6);
@@ -12,7 +11,7 @@ export function Footer() {
         <div className="lg:col-span-2 max-w-md">
           <div className="inline-flex items-center rounded-2xl bg-white px-4 py-3 shadow-[0_8px_24px_-16px_rgba(15,42,63,0.2)]">
             <img
-              src={logoAsset.url}
+              src="/images/vancouver-water-festival-logo.png"
               alt="Vancouver Water Splashing Festival · Chinese Cultural Heritage 2026"
               className="h-16 w-auto"
               loading="lazy"
