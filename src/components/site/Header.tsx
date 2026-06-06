@@ -35,7 +35,7 @@ export function Header() {
             <img
               src={logoAsset.url}
               alt="Vancouver Water Splashing Festival · Chinese Cultural Heritage 2026"
-              className="h-9 sm:h-10 w-auto"
+              className="h-12 sm:h-14 w-auto"
               loading="eager"
             />
           </span>

@@ -169,9 +169,10 @@
   }
 
   h1, h2, h3, h4, .font-display {
-    font-family: "Fredoka", "Quicksand", ui-sans-serif, system-ui, sans-serif;
-    font-weight: 600;
-    letter-spacing: -0.01em;
+    font-family: "Bagel Fat One", "Fredoka", ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    line-height: 1.05;
   }
 
   .font-zh {
@@ -185,8 +186,8 @@
 
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Fredoka", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Fredoka", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Bagel Fat One", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bagel Fat One", ui-sans-serif, system-ui, sans-serif;
   --color-brand-ocean: var(--brand-ocean);
   --color-brand-ocean-deep: var(--brand-ocean-deep);
   --color-brand-sky: var(--brand-sky);
