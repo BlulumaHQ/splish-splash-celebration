@@ -2,7 +2,6 @@ import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV } from "@/lib/festival";
-import logoAsset from "@/assets/vancouver-water-festival-logo.png.asset.json";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -33,7 +32,7 @@ export function Header() {
             }`}
           >
             <img
-              src={logoAsset.url}
+              src="/images/vancouver-water-festival-logo.png"
               alt="Vancouver Water Splashing Festival · Chinese Cultural Heritage 2026"
               className="h-12 sm:h-14 w-auto"
               loading="eager"
