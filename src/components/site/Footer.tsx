@@ -49,7 +49,7 @@ export function Footer() {
       </div>
       <div className="border-t border-brand-ocean/10">
         <div className="mx-auto max-w-7xl px-5 lg:px-8 py-5 text-xs text-brand-ink/55 flex flex-col sm:flex-row gap-2 justify-between">
-          <div>© 2026 Canadian Community Service Association (CCSA). All rights reserved.</div>
+          <div>© 2026 Canadian Community Service Association (CCSA). All rights reserved. | Web Design by{" "}<a href="https://bluluma.com" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2 hover:opacity-80">Bluluma Design</a></div>
           <div className="font-zh">加拿大华人联合总会 · 中華傳統文化節暨第18屆溫哥華潑水節</div>
         </div>
       </div>
